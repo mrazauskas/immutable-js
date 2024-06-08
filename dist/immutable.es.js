@@ -5873,7 +5873,7 @@ var Repeat = /*@__PURE__*/(function (IndexedSeq) {
   Repeat.prototype.equals = function equals (other) {
     return other instanceof Repeat
       ? is(this._value, other._value)
-      : deepEqual(other);
+      : deepEqual(this, other);
   };
 
   return Repeat;
@@ -5922,7 +5922,7 @@ function defaultConverter(k, v) {
   return isIndexed(v) ? v.toList() : isKeyed(v) ? v.toMap() : v.toSet();
 }
 
-var version = "4.3.5";
+var version = "4.3.6";
 
 var Immutable = {
   version: version,
